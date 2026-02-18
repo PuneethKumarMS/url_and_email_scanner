@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Detection & URL Scanner</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Phishing Detection & URL Scanner</h1>
+
+        <div class="form-container">
+            <!-- Email phishing detection form -->
+            <div class="form-section">
+                <h2>Check Email for Phishing</h2>
+                <form action="/predict_email" method="POST">
+                    <textarea name="email_content" placeholder="Enter email content to check for phishing" rows="6" required></textarea>
+                    <button type="submit">Check Email</button>
+                </form>
+            </div>
+
+            <!-- URL scanning form -->
+            <div class="form-section">
+                <h2>Check URL for Safety</h2>
+                <form action="/scan_url" method="POST">
+                    <input type="text" name="url" placeholder="Enter URL to scan" required>
+                    <button type="submit">Scan URL</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

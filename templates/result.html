@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Scan Result</h1>
+
+        <div class="result-container">
+            <!-- Email phishing result -->
+            {% if email %}
+            <div class="result">
+                <h2>Email Phishing Detection Result</h2>
+                <p><strong>Email:</strong></p>
+                <pre>{{ email }}</pre>
+                <p><strong>Prediction:</strong> {{ result }}</p>
+                <button onclick="window.open('mailto:example@example.com', '_blank')">Send Email</button>
+            </div>
+            {% endif %}
+
+            <!-- URL scanning result -->
+            {% if url_result %}
+            <div class="result">
+                <h2>URL Scan Result</h2>
+                <p><strong>URL:</strong> {{ url }}</p>
+                <p><strong>Result:</strong> {{ url_result }}</p>
+                <button onclick="window.open('{{ url }}', '_blank')">Visit URL</button>
+            </div>
+            {% endif %}
+        </div>
+
+        <a href="/" class="back-button">Back to Home</a>
+    </div>
+</body>
+</html>
