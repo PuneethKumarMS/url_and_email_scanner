@@ -27,6 +27,7 @@ if __name__ == "__main__":
         "https://secure-login.bankofxyz.com",
         "https://www.google.com",
         "http://update-your-details.xyz",
+        "http://com-sa.pm?"
     ]
 
     for url in test_urls:
